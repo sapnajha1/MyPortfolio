@@ -68,7 +68,8 @@ class _MyHomeState extends State<MyHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      backgroundColor: Color(0xFF0F3555),
+      backgroundColor: Colors.red,
+      // Color(0xFF0F3555),
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
@@ -122,23 +123,25 @@ class _MyHomeState extends State<MyHome> {
               child: Container(
                 child: Stack(
                   children: [
-                    Container(
-                      margin: EdgeInsets.only(top: 35),
-                      child: ShaderMask(
-                        shaderCallback: (rect) {
-                          return LinearGradient(
-                            begin: Alignment.center,
-                            end: Alignment.bottomCenter,
-                            colors: [Colors.black, Colors.transparent],
-                          ).createShader(
-                            Rect.fromLTRB(0, 0, rect.width, rect.height),
-                          );
-                        },
-                        blendMode: BlendMode.dstIn,
-                        child: Image.asset(
-                          'images/profilebg.png',
-                          height: constraints.maxHeight * 0.35,
-                          fit: BoxFit.contain,
+                    Center(
+                      child: Container(
+                        margin: EdgeInsets.only(top: 35),
+                        child: ShaderMask(
+                          shaderCallback: (rect) {
+                            return LinearGradient(
+                              begin: Alignment.center,
+                              end: Alignment.bottomCenter,
+                              colors: [Colors.black, Colors.transparent],
+                            ).createShader(
+                              Rect.fromLTRB(0, 0, rect.width, rect.height),
+                            );
+                          },
+                          blendMode: BlendMode.dstIn,
+                          child: Image.asset(
+                            'images/profilebg.png',
+                            height: constraints.maxHeight * 0.35,
+                            fit: BoxFit.contain,
+                          ),
                         ),
                       ),
                     ),
